@@ -1,5 +1,7 @@
 ## frontend
 
+npm install
+
 yarn cypress run-ct --record --key 07b3bc61-afa9-4133-bf39-a256a1980d15
 
 docker build -t voyny:alarm-frontend .
