@@ -6,5 +6,6 @@ dist: trusty
 jdk: oraclejdk17
 
 script:
-  - chmod +x alarm-management/gradlew
-  - ./alarm-management/gradlew build --scan -s
+  - cd alarm-management
+  - chmod +x gradlew
+  - ./gradlew build --scan -s
