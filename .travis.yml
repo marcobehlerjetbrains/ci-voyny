@@ -18,4 +18,6 @@ jobs:
     - stage: docker
       script: 
         - cd alarm-management
+        - chmod +x gradlew
+        - ./gradlew build    
         - docker build -t bla/bla .
