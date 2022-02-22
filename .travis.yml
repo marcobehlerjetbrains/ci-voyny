@@ -5,7 +5,17 @@ os: linux
 dist: focal
 jdk: oraclejdk17
 
-script:
-  - cd alarm-management
-  - chmod +x gradlew
-  - ./gradlew build
+services:
+  - docker
+  
+jobs:
+  include:
+    - stage: build
+      script: 
+        - cd alarm-management
+        - chmod +x gradlew
+        - ./gradlew build    
+    - stage: docker
+      script: 
+        - cd alarm-management
+        - docker build -t bla/bla .
