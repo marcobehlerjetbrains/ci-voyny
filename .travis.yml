@@ -8,4 +8,4 @@ jdk: oraclejdk17
 script:
   - cd alarm-management
   - chmod +x gradlew
-  - ./gradlew build --scan -s
+  - ./gradlew build
