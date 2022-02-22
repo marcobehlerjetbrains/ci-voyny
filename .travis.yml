@@ -10,15 +10,14 @@ services:
   
 jobs:
   include:
-    - name: "Backend"
-      - stage: build
-        script: 
-          - cd alarm-management
-          - chmod +x gradlew
-          - ./gradlew build            
-      - stage: docker
-        script: 
-          - cd alarm-management
-          - chmod +x gradlew
-          - ./gradlew build    
-          - docker build -t bla/bla .
+    - stage: build
+      script: 
+        - cd alarm-management
+        - chmod +x gradlew
+        - ./gradlew build    
+    - stage: docker
+      script: 
+        - cd alarm-management
+        - chmod +x gradlew
+        - ./gradlew build    
+        - docker build -t bla/bla .
