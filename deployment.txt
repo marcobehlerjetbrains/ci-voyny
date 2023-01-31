@@ -19,7 +19,7 @@ gradlew clean build  ## has flaky tests
 docker build -t marcobehler/voyny-alarm-management:latest .
 
 docker login --username=marcobehler
-docker push marcobehler/voyny-alarm-managemen:latest
+docker push marcobehler/voyny-alarm-management:latest
 
-docker run -d -it --rm -p 8080:8080 voyny-alarm-frontend:latest
+docker run -d -it --rm -p 8080:8080 marcobehler/voyny-alarm-management:latest
 
