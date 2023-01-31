@@ -8,16 +8,18 @@ npm install
 yarn cypress run-ct --record --key 07b3bc61-afa9-4133-bf39-a256a1980d15
 
 docker build -t voyny:alarm-frontend .
-docker push username/voyny:alarm-frontend
+docker push marcobehler/voyny-alarm-frontend
 
-docker run -d -it --rm -p 3000:3000 voyny:alarm-frontend
+docker run -d -it --rm -p 3000:3000 voyny-alarm-frontend
 
 ## management
 
 gradlew clean build  ## has flaky tests
  
 docker build -t voyny:alarm-management .
-docker push username/voyny:alarm-management 
 
-docker run -d -it --rm -p 8080:8080 voyny:alarm-management
+docker login --username=marcobehler
+docker push marcobehler/voyny-alarm-management 
+
+docker run -d -it --rm -p 8080:8080 voyny-alarm-frontend
 
