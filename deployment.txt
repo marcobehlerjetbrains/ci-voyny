@@ -16,7 +16,7 @@ docker run -d -it --rm -p 3000:3000 voyny-alarm-frontend
 
 gradlew clean build  ## has flaky tests
  
-docker build -t voyny-alarm-frontend:latest .
+docker build -t marcobehler/voyny-alarm-management:latest .
 
 docker login --username=marcobehler
 docker push marcobehler/voyny-alarm-managemen:latest
