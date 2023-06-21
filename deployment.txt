@@ -1,25 +1,26 @@
-## frontend
+## alarm-management
 
-# choco install nodejs npm yarn
-# apt-get install nodejs npm yarn
-
-npm install
-
-yarn cypress run-ct --record --key 07b3bc61-afa9-4133-bf39-a256a1980d15
-
-docker build -t voyny:alarm-frontend .
-docker push marcobehler/voyny-alarm-frontend
-
-docker run -d -it --rm -p 3000:3000 voyny-alarm-frontend
-
-## management
-
+### Build
 gradlew clean build  ## has flaky tests
  
-docker build -t marcobehler/voyny-alarm-management:latest .
-
+docker build -t marcobehler/voyny-alarm-management:latest .    ### use your own docker hub username/password credentials
 docker login --username=marcobehler
 docker push marcobehler/voyny-alarm-management:latest
 
+
+### Deploy
 docker run -d -it --rm -p 8080:8080 marcobehler/voyny-alarm-management:latest
+
+
+
+## alarm-frontend
+
+### Build
+npm install
+yarn cypress run-ct --record --key 07b3bc61-afa9-4133-bf39-a256a1980d15
+docker build -t voyny:alarm-frontend .
+docker push marcobehler/voyny-alarm-frontend     ### use your own docker hub username/password credentials
+
+### Deploy
+docker run -d -it --rm -p 3000:3000 voyny-alarm-frontend
 
