@@ -1,10 +1,10 @@
 ## alarm-management
 
 ### Build
-gradlew clean build  ## has flaky tests
+gradlew clean build  ## needs Java 17
  
 docker build -t marcobehler/voyny-alarm-management:latest .    ### use your own docker hub username/password credentials
-docker login --username=marcobehler
+docker login --username=marcobehler  ### user your down docker hub user
 docker push marcobehler/voyny-alarm-management:latest
 
 
